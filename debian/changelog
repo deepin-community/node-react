@@ -1,0 +1,212 @@
+node-react (17.0.2+dfsg+~cs106.66.56-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Pirate Praveen ]
+  * Remove unused build dependency: node-rollup-plugin-alias
+  * Add node-minimist as build dependency
+
+  [ Yadd ]
+  * Fix GitHub tags regex
+  * Update standards version to 4.6.0, no changes needed.
+  * Fix filenamemangle
+  * New upstream version 17.0.2+dfsg+~cs106.66.56
+  * Build: set HOME to /tmp (Closes: #997788)
+  * Fix lintian overrides
+
+ -- Yadd <yadd@debian.org>  Mon, 25 Oct 2021 06:24:26 +0200
+
+node-react (17.0.1+dfsg+~cs106.58.5-5) unstable; urgency=medium
+
+  * Drop legacy rollup-plugin-commonjs usage
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 02 Jan 2021 16:52:15 +0000
+
+node-react (17.0.1+dfsg+~cs106.58.5-4) unstable; urgency=medium
+
+  * Drop legacy rollup-plugin-babel usage
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 02 Jan 2021 00:17:04 +0530
+
+node-react (17.0.1+dfsg+~cs106.58.5-3) unstable; urgency=medium
+
+  * Add node-rollup-plugin-terser as build dependency and drop patch
+  * Add rollup-plugin-node-resolve legacy as build module (updating to
+    @rollup/plugin-node-resolve introduced regressions)
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 01 Jan 2021 23:21:07 +0530
+
+node-react (17.0.1+dfsg+~cs106.58.5-2) unstable; urgency=medium
+
+  * Drop legacy node-resolve plugin usage
+
+ -- Pirate Praveen <praveen@debian.org>  Thu, 31 Dec 2020 21:13:14 +0530
+
+node-react (17.0.1+dfsg+~cs106.58.5-1) unstable; urgency=medium
+
+  * Team upload
+  * Set upstream metadata fields: Bug-Submit, Security-Contact.
+  * Declare compliance with policy 4.5.1
+  * Add ctype=nodejs to component(s)
+  * New upstream version 17.0.1+dfsg+~cs106.58.5
+    Updates typescript definitions
+
+ -- Xavier Guimard <yadd@debian.org>  Sun, 06 Dec 2020 15:07:28 +0100
+
+node-react (17.0.1+dfsg+~cs102.92.74-1) unstable; urgency=medium
+
+  * Team upload
+  * Add typescript types (Closes: #974082)
+  * New upstream version 17.0.1+dfsg+~cs102.92.74 (no other changes)
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 10 Nov 2020 06:25:36 +0100
+
+node-react (17.0.1+dfsg+~cs32.23.54-3) unstable; urgency=medium
+
+  * Team upload
+  * Update remove-syntax-trailing-function-commas.diff patch
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 27 Oct 2020 20:51:40 +0100
+
+node-react (17.0.1+dfsg+~cs32.23.54-2) unstable; urgency=medium
+
+  * Team upload
+  * Add fix for node-mkdirp ≥ 1 (Closes: #973109)
+  * Fix packages build
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 27 Oct 2020 19:10:18 +0100
+
+node-react (17.0.1+dfsg+~cs32.23.54-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 17.0.1+dfsg+~cs32.23.54
+    Updates: react 17.0.1
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 23 Oct 2020 14:25:07 +0200
+
+node-react (17.0.0+dfsg+~cs32.23.54-1) unstable; urgency=medium
+
+  * Team upload
+  * Use dh-sequence-nodejs
+  * refresh patches
+  * Embed react-shallow-renderer
+  * New upstream version 17.0.0+dfsg+~cs32.23.54
+    Updates:
+     + react 17.0.0
+     + @types/react 16.9.53
+     + react-shallow-renderer 16.14.1
+    Really 17.0.0+~16.9.53+~16.14.1
+  * Update copyright
+  * Update build
+  * Add build dependency to node-babel-plugin-syntax-trailing-function-commas
+  * Update lintian overrides
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 22 Oct 2020 12:55:43 +0200
+
+node-react (16.13.1+dfsg+~cs16.9.34-3) unstable; urgency=medium
+
+  * Team upload
+  * Bump debhelper compatibility level to 13
+  * Add missing build dependencies to node-browser-resolve
+
+ -- Xavier Guimard <yadd@debian.org>  Thu, 24 Sep 2020 10:53:24 +0200
+
+node-react (16.13.1+dfsg+~cs16.9.34-2) unstable; urgency=medium
+
+  * Team upload
+  * d/nodejs/additional_components: install all modules
+
+ -- Nicolas Mora <nicolas@babelouest.org>  Sat, 06 Jun 2020 18:05:46 -0400
+
+node-react (16.13.1+dfsg+~cs16.9.34-1) unstable; urgency=medium
+
+  * Team upload
+  * Embed @types/react
+  * Update debian/clean
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 09 May 2020 23:44:54 +0200
+
+node-react (16.13.1+dfsg-3) unstable; urgency=medium
+
+  * Team upload
+  * Build modules: remove babel-plugin-annotate-pure-calls and add art
+  * Refresh patches
+  * Add patch to remove node-babel* 6 dependencies and drop useless cross-env
+    module
+  * Remove build dependency to
+    node-babel-plugin-syntax-trailing-function-commas and
+    node-babel-code-frame
+  * Update build
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 08 May 2020 08:48:14 +0200
+
+node-react (16.13.1+dfsg-2) unstable; urgency=medium
+
+  * Reupload to unstable (node-babel7 is in unstable now)
+
+ -- Pirate Praveen <praveen@debian.org>  Sat, 02 May 2020 22:28:55 +0530
+
+node-react (16.13.1+dfsg-1) experimental; urgency=medium
+
+  [ Ben Finney ]
+  * Provide more context in package descriptions.
+
+  [ Pirate Praveen ]
+  * New upstream version 16.13.1 (Closes: #958769)
+  * Refresh patches
+  * Embed targz and tar-fs as build only modules
+  * Add debian/build_modules to NODE_PATH
+  * Update build dependencies
+  * Add npm as build dependency for npm pack command
+  * Update paths for built modules (build/packages -> build/node_modules)
+  * Build react-window embedded in react-devtools-shared from source
+  * Add babel.config.js for react-window
+  * Embed build dependency for react-window module and build
+  * Add repack options to remove generated files
+  * New upstream version 16.13.1+dfsg
+  * Update lintian overrides
+  * Drop packages/scheduler/npm/umd/*.min.js from orig source
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 29 Apr 2020 12:06:12 +0530
+
+node-react (16.2.0-4) unstable; urgency=medium
+
+  * Team upload (Closes: #944193)
+  * Bump debhelper compatibility level to 12
+  * Declare compliance with policy 4.4.1
+  * Add "Rules-Requires-Root: no"
+  * Add debian/gbp.conf
+  * Add upstream/metadata
+  * Use node-ncp instead of embedded one
+  * No more use pkg-components (Closes: #933123)
+  * Add patches descriptions
+  * Fix debian/copyright
+  * Switch install to pkg-js-tools
+  * Install all packages/* modules (Closes: #923537)
+  * Update description
+
+ -- Xavier Guimard <yadd@debian.org>  Tue, 05 Nov 2019 21:58:22 +0100
+
+node-react (16.2.0-3) unstable; urgency=medium
+
+  [ Paolo Greppi ]
+  * Update Vcs fields for migration to https://salsa.debian.org/
+
+  [ Pirate Praveen ]
+  * Drop node-react-dom binary (as per ftp master rejection)
+  * Add rollup-plugin-commonjs as a component (version in the archive is not
+    compatible)
+
+ -- Pirate Praveen <praveen@debian.org>  Fri, 26 Oct 2018 23:48:09 +0530
+
+node-react (16.2.0-2) unstable; urgency=medium
+
+  * Create node-react-dom binary
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 23 Jan 2018 17:16:28 +0530
+
+node-react (16.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #886411)
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 23 Jan 2018 12:45:56 +0530

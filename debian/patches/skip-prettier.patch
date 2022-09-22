@@ -1,0 +1,29 @@
+Description: Skip prettier
+ hopefully its optional, bad style we can tolerate
+Forwarded: not-needed
+
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -3,7 +3,6 @@
+ const rollup = require('rollup');
+ const babel = require('rollup-plugin-babel');
+ const commonjs = require('rollup-plugin-commonjs');
+-const prettier = require('rollup-plugin-prettier');
+ const replace = require('rollup-plugin-replace');
+ const stripBanner = require('rollup-plugin-strip-banner');
+ const chalk = require('chalk');
+@@ -398,14 +397,6 @@
+     // HACK to work around the fact that Rollup isn't removing unused, pure-module imports.
+     // Note that this plugin must be called after closure applies DCE.
+     isProduction && stripUnusedImports(pureExternalModules),
+-    // Add the whitespace back if necessary.
+-    shouldStayReadable &&
+-      prettier({
+-        parser: 'babel',
+-        singleQuote: false,
+-        trailingComma: 'none',
+-        bracketSpacing: true,
+-      }),
+     // License and haste headers, top-level `if` blocks.
+     {
+       renderChunk(source) {

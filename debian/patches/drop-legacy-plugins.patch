@@ -1,0 +1,15 @@
+Replace legacy plugins
+
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -1,8 +1,8 @@
+ 'use strict';
+ 
+ const rollup = require('rollup');
+-const babel = require('rollup-plugin-babel');
+-const commonjs = require('rollup-plugin-commonjs');
++const babel = require('@rollup/plugin-babel').default;
++const commonjs = require('@rollup/plugin-commonjs');
+ const replace = require('rollup-plugin-replace');
+ const chalk = require('chalk');
+ const path = require('path');

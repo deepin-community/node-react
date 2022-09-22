@@ -1,0 +1,10 @@
+skip-closure.patch
+skip-prettier.patch
+skip-strip-banner.patch
+no-skip-node-resolve.patch
+add-build-files-for-react-window.patch
+remove-cross-env.diff
+remove-babel-code-frame.diff
+remove-syntax-trailing-function-commas.diff
+fix-for-mkdirp-1.diff
+drop-legacy-plugins.patch

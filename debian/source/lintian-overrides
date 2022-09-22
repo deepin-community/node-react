@@ -1,0 +1,40 @@
+# false positive
+source-is-missing scripts/rollup/validate/eslintrc.umd.js
+source-is-missing packages/shared/forks/Scheduler.umd.js
+source-is-missing packages/shared/forks/SchedulerTracing.umd.js
+source-is-missing packages/shared/forks/object-assign.umd.js
+source-is-missing packages/shared/forks/object-assign.inline-umd.js
+source-is-missing react-shallow-renderer/cjs/react-shallow-renderer.js
+source-is-missing react-shallow-renderer/esm/react-shallow-renderer.js
+source-is-missing react-shallow-renderer/umd/react-shallow-renderer.js
+source-is-missing scripts/bench/benchmarks/hacker-news/top-stories.js
+source-contains-prebuilt-javascript-object packages/react/src/forks/ReactSharedInternals.umd.js
+source-contains-prebuilt-javascript-object packages/shared/forks/Scheduler.umd.js
+source-contains-prebuilt-javascript-object packages/shared/forks/SchedulerTracing.umd.js
+source-contains-prebuilt-javascript-object packages/shared/forks/object-assign.inline-umd.js
+source-contains-prebuilt-javascript-object packages/shared/forks/object-assign.umd.js
+source-contains-prebuilt-javascript-object scripts/rollup/validate/eslintrc.umd.js
+source-contains-prebuilt-javascript-object react-shallow-renderer/cjs/react-shallow-renderer.js
+source-contains-prebuilt-javascript-object react-shallow-renderer/esm/react-shallow-renderer.js
+source-contains-prebuilt-javascript-object react-shallow-renderer/umd/react-shallow-renderer.js
+source-contains-prebuilt-javascript-object scripts/bench/benchmarks/hacker-news/top-stories.js
+very-long-line-length-in-source-file CHANGELOG.md line 1342 is 827 characters long (>512)
+very-long-line-length-in-source-file README.md line 1 is 564 characters long (>512)
+very-long-line-length-in-source-file fixtures/dom/package.json line 23 is 797 characters long (>512)
+very-long-line-length-in-source-file fixtures/dom/public/react-logo.svg line 1 is 2883 characters long (>512)
+very-long-line-length-in-source-file fixtures/stacks/BabelClasses-compiled.js.map line 1 is 789 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-extensions/icons/deadcode.svg line 1 is 3088 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-extensions/icons/development.svg line 1 is 3088 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-extensions/icons/disabled.svg line 1 is 1648 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-extensions/icons/outdated.svg line 1 is 1509 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-extensions/icons/production.svg line 1 is 1658 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-scheduling-profiler/src/assets/logo.svg line 1 is 8205 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools-scheduling-profiler/src/assets/reactlogo.svg line 3 is 2482 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools/OVERVIEW.md line 232 is 721 characters long (>512)
+very-long-line-length-in-source-file packages/react-devtools/README.md line 88 is 654 characters long (>512)
+very-long-line-length-in-source-file scripts/release/snapshot-test.snapshot line 536 is 627 characters long (>512)
+very-long-line-length-in-source-file types-react-reconciler/index.d.ts line 381 is 555 characters long (>512)
+very-long-line-length-in-source-file typesreact/README.md line 16 is 1285 characters long (>512)
+
+# Test data
+source-contains-prebuilt-javascript-object fixtures/stacks/BabelClasses-compiled.js

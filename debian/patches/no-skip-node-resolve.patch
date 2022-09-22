@@ -1,0 +1,23 @@
+Description: skip option is removed from rollup-plugin-node-resolve
+ https: //github.com/facebook/react/issues/12076
+Forwarded: not-needed
+
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -356,7 +356,6 @@
+     forbidFBJSImports(),
+     // Use Node resolution mechanism.
+     resolve({
+-      skip: externals,
+     }),
+     // Compile to ES2015.
+     babel(
+@@ -640,7 +639,7 @@
+     console.error();
+     console.error(warning.message || warning);
+     console.error();
+-    process.exit(1);
++//    process.exit(1);
+   } else {
+     // The warning is from one of the plugins.
+     // Maybe it's not important, so just print it.

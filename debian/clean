@@ -1,0 +1,15 @@
+build/
+node_modules/
+packages/react-devtools-shared/src/node_modules/react-window/dist/
+debian/build_modules/babel-plugin-annotate-pure-calls/lib/
+debian/build_modules/babel-plugin-annotate-pure-calls/node_modules
+packages/scheduler/npm/umd/*.min.js
+packages/react-devtools-shared/src/node_modules/react-window/babel.config.js
+packages/react-devtools-shared/src/node_modules/react-window/flow-template
+packages/react-devtools-shared/src/node_modules/react-window/rollup.config.js
+scripts/flow/custom/
+scripts/flow/dom-browser/
+scripts/flow/dom/
+scripts/flow/fabric/
+scripts/flow/native/
+scripts/flow/test/

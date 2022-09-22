@@ -1,0 +1,27 @@
+Description: Skip strip banner
+ not pakaged in debian, hopefully we can tolerate it
+Forwarded: not-needed
+Reviewed-By: Xavier Guimard <yadd@debian.org>
+Last-Update: 2020-10-21
+
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -4,7 +4,6 @@
+ const babel = require('rollup-plugin-babel');
+ const commonjs = require('rollup-plugin-commonjs');
+ const replace = require('rollup-plugin-replace');
+-const stripBanner = require('rollup-plugin-strip-banner');
+ const chalk = require('chalk');
+ const path = require('path');
+ const resolve = require('rollup-plugin-node-resolve');
+@@ -359,10 +358,6 @@
+     resolve({
+       skip: externals,
+     }),
+-    // Remove license headers from individual modules
+-    stripBanner({
+-      exclude: 'node_modules/**/*',
+-    }),
+     // Compile to ES2015.
+     babel(
+       getBabelConfig(

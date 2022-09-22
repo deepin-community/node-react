@@ -1,0 +1,27 @@
+Description: remove useless babel-code-frame
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-10-21
+
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -19,7 +19,6 @@
+ const extractErrorCodes = require('../error-codes/extract-errors');
+ const Packaging = require('./packaging');
+ const {asyncRimRaf} = require('./utils');
+-const codeFrame = require('babel-code-frame');
+ const Wrappers = require('./wrappers');
+ 
+ const RELEASE_CHANNEL = process.env.RELEASE_CHANNEL;
+@@ -665,10 +664,7 @@
+     const rawLines = fs.readFileSync(file, 'utf-8');
+     // column + 1 is required due to rollup counting column start position from 0
+     // whereas babel-code-frame counts from 1
+-    const frame = codeFrame(rawLines, line, column + 1, {
+-      highlightCode: true,
+-    });
+-    console.error(frame);
++    console.error(rawLines);
+   } else if (error.codeFrame) {
+     // This looks like an error from a plugin (e.g. Babel).
+     // In this case we'll resort to displaying the provided code frame

@@ -1,0 +1,35 @@
+Description: remove dependency plugin to node-babel-plugin-syntax-trailing-function-commas
+Author: Xavier Guimard <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2020-10-27
+
+--- a/babel.config.js
++++ b/babel.config.js
+@@ -6,7 +6,6 @@
+     '@babel/plugin-transform-react-jsx',
+     '@babel/plugin-transform-flow-strip-types',
+     ['@babel/plugin-proposal-class-properties', {loose: true}],
+-    'syntax-trailing-function-commas',
+     [
+       '@babel/plugin-proposal-object-rest-spread',
+       {loose: true, useBuiltIns: true},
+--- a/package.json
++++ b/package.json
+@@ -37,7 +37,6 @@
+     "@mattiasbuelens/web-streams-polyfill": "^0.3.2",
+     "art": "0.10.1",
+     "babel-eslint": "^10.0.3",
+-    "babel-plugin-syntax-trailing-function-commas": "^6.5.0",
+     "chalk": "^3.0.0",
+     "cli-table": "^0.3.1",
+     "coffee-script": "^1.12.7",
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -99,7 +99,6 @@
+   // These plugins filter out non-ES2015.
+   '@babel/plugin-transform-flow-strip-types',
+   ['@babel/plugin-proposal-class-properties', {loose: true}],
+-  'syntax-trailing-function-commas',
+   // These use loose mode which avoids embedding a runtime.
+   // TODO: Remove object spread from the source. Prefer Object.assign instead.
+   [

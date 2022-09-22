@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+export DEBIAN_BUILD_MODULES=$(CURDIR)/debian/build_modules
+export NODE_PATH=packages:debian/build_modules
+export HOME=/tmp
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	# No auto links but simulate part of pkg-js-tools auto links
+	mkdir -p node_modules
+	for m in `cat debian/nodejs/extcopies`; do \
+		cp -a `nodepath $$m` node_modules/; \
+	done
+	for m in `cat debian/nodejs/extlinks`; do \
+		ln -s `nodepath $$m` node_modules/; \
+	done
+	for m in `ls debian/build_modules`; do \
+		ln -s ../debian/build_modules/$$m node_modules/; \
+	done
+	ln -s ../react-shallow-renderer node_modules/
+
+override_dh_auto_build:
+	node scripts/rollup/build.js
+	for m in `ls build/node_modules`; do \
+		cp packages/$$m/package.json build/node_modules/$$m/; \
+		cp packages/$$m/npm/* build/node_modules/$$m/; \
+	done
+
+override_dh_auto_clean:
+	# Don't call pkg-js-tools hook here
+	dh_auto_clean
