@@ -17,22 +17,18 @@ Files-Excluded: packages/react-devtools-shared/src/node_modules/react-window/dis
  packages/scheduler/npm/umd/*.min.js
 
 Files: *
-Copyright: 2013-present, Facebook, Inc. and its affiliates
+Copyright: Facebook, Inc. and its affiliates
 License: Expat
 
 Files: debian/*
 Copyright: 2018, Pirate Praveen <praveen@debian.org>
- 2019-2020, Yadd <yadd@debian.org>
+ 2019-2022, Yadd <yadd@debian.org>
 License: Expat
 
 Files: debian/build_modules/art/*
 Copyright: 2006-2009 Valerio Proietti <http://mad4milk.net/>
  2010-2011 Calyptus Life AB <http://calyptus.eu/>
  2012-2013 Sebastian Markbåge
-License: Expat
-
-Files: debian/build_modules/tar-fs/*
-Copyright: 2014 Mathias Buus
 License: Expat
 
 Files: debian/build_modules/targz/*
@@ -48,13 +44,19 @@ Copyright: 2018 Brian Vaughn
 License: Expat
 
 Files: packages/react-dom/src/server/escapeTextForBrowser.js
-Copyright: 2016-present, Facebook, Inc.
+Copyright: Facebook, Inc.
 License: Expat
 Comment: Based on the escape-html library, which is used under the Expat
  License:
   * Copyright 2012-2013 TJ Holowaychuk
   * Copyright 2015 Andreas Lubbe
   * Copyright 2015 Tiancheng "Timothy" Gu
+
+Files: scripts/babel/transform-prevent-infinite-loops.js
+Copyright: Facebook, Inc. and its affiliates
+ 2017 Amjad Masad
+License: Expat
+Comment: Based on https://repl.it/site/blog/infinite-loops
 
 Files: types*/*
 Copyright: Microsoft Corporation

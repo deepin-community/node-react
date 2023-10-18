@@ -3,37 +3,34 @@ Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.deb
 Uploaders: Pirate Praveen <praveen@debian.org>
 Section: javascript
 Priority: optional
-Build-Depends:
- debhelper-compat (= 13)
- , nodejs
- , rollup
+Build-Depends: debhelper-compat (= 13)
+ , dh-nodejs
+ , dh-sequence-nodejs-no-lerna
  , node-babel7
  , node-browser-resolve
-# possibly a slip by upstream in scripts/rollup/build.js +22 (using babel 6)
- , node-gzip-size
+ , node-chownr
  , node-cli-table
  , node-fbjs <!nocheck>
- , node-filesize
+ , node-filesize (>= 10)
+ , node-gzip-size
  , node-loose-envify <!nocheck>
  , node-minimist
- , node-mkdirp (>= 1)
+ , node-mkdirp
  , node-ncp
  , node-object-assign <!nocheck>
  , node-prop-types
- , node-rimraf
- , node-rollup-plugin-babel (>= 5.2~)
- , node-rollup-plugin-commonjs (>= 15~)
- , node-rollup-plugin-replace
- , node-rollup-plugin-node-resolve (>= 9~)
- , node-rollup-plugin-terser
-# for embedded targz -> tar-fs
- , node-chownr
  , node-pump
+ , node-rimraf
+ , node-rollup-plugin-babel
+ , node-rollup-plugin-commonjs
+ , node-rollup-plugin-node-resolve
+ , node-rollup-plugin-replace
+ , node-rollup-plugin-terser
+ , node-tar-fs
  , node-tar-stream
-# for npm pack command
  , npm
- , dh-sequence-nodejs
-Standards-Version: 4.6.0
+ , rollup
+Standards-Version: 4.6.2
 Vcs-Browser: https://salsa.debian.org/js-team/node-react
 Vcs-Git: https://salsa.debian.org/js-team/node-react.git
 Homepage: https://reactjs.org/
@@ -41,16 +38,12 @@ Rules-Requires-Root: no
 
 Package: node-react
 Architecture: all
-Depends:
- ${misc:Depends}
- , nodejs
- , node-fbjs
- , node-loose-envify
- , node-object-assign (>= 4.1.1)
- , node-prop-types
-Provides: ${nodejs:Provides}
+Depends: node-loose-envify
+ , ${misc:Depends}
+Provides: libjs-react (= ${binary:Version})
+ , ${nodeReact:Provides}
 Description: Node.js library for building user interfaces
- ReactJS is a library for building JavaScript user interfaces.
+ node-react is a library for building JavaScript user interfaces.
  .
  Some features of React:
   * Declarative: React makes it painless to create interactive UIs. Design
@@ -68,3 +61,144 @@ Description: Node.js library for building user interfaces
     power mobile apps using React Native.
  .
  This package installs the ReactJS library for Node.js.
+
+Package: node-eslint-plugin-react-hooks
+Architecture: all
+Depends: eslint
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeEslintPluginReactHooks:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: node-react plugin for eslint
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package provides an eslint plugin for React.
+
+Package: node-jest-react
+Architecture: all
+Depends: jest
+ , node-object-assign
+ , node-react
+ , node-react-is
+ , node-react-shallow-renderer
+ , node-react-test-renderer
+ , node-scheduler
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeJestReact:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: node-jest matchers and utilities for testing React Test Renderer
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package provides matchers and utilities for node-jest.
+
+Package: node-react-dom
+Architecture: all
+Depends: node-react
+ , node-scheduler
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeReactDom:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: node-react library to serve as the entry point to the DOM
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package provides a library to serve as the entry point to the DOM and
+ server renderers for node-react. It is intended to be paired with the generic
+ node-react package.
+
+Package: node-react-is
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeReactIs:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: JavaScript library to test if a value is a React.js element
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package allows one to test arbitrary values and see if they're a
+ particular React element type.
+
+Package: node-react-reconciler
+Architecture: all
+Depends: node-loose-envify
+ , node-react
+ , node-scheduler
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeReactReconciler:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: Experimental package for creating custom React renderers
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This is an experimental package for creating custom React renderers.
+
+Package: node-react-refresh
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeReactRefresh:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: React.js library to integrate Fast Refresh into bundlers
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package implements the wiring necessary to integrate Fast Refresh into
+ bundlers. Fast Refresh is a feature that lets you edit React components in
+ a running application without losing their state. It is similar to an old
+ feature known as "hot reloading", but Fast Refresh is more reliable and
+ officially supported by React.
+ .
+ This package is primarily aimed at developers of bundler plugins.
+
+Package: node-react-shallow-renderer
+Architecture: all
+Depends: node-object-assign
+ , node-react
+ , node-react-is
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeReactShallowRenderer:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: Shallow renderer for testing ReactJS modules
+ When writing unit tests for React, shallow rendering can be helpful.
+ Shallow rendering permits one to render a component "one level deep" and
+ assert facts about what its render method returns, without worrying about
+ the behavior of child components, which are not instantiated or rendered.
+ This does not require a DOM.
+
+Package: node-react-test-renderer
+Architecture: all
+Depends: node-object-assign
+ , node-react
+ , node-react-is
+ , node-react-shallow-renderer
+ , node-scheduler
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeReactTestRenderer:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: Experimental React renderer to be used to render React components to pure JavaScript objects
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package provides an experimental React renderer that can be used to
+ render React components to pure JavaScript objects, without depending on the
+ DOM or a native mobile environment.
+ .
+ Essentially, this package makes it easy to grab a snapshot of the "DOM tree"
+ rendered by a React DOM or React Native component without using a browser or
+ node-jsdom.
+
+Package: node-scheduler
+Architecture: all
+Depends: node-loose-envify
+ , ${misc:Depends}
+Breaks: node-react (<< 18.2.0~)
+Provides: ${nodeScheduler:Provides}
+Replaces: node-react (<< 18.2.0~)
+Description: JavaScript library for cooperative scheduling in a browser environment
+ node-react is a library for building JavaScript user interfaces.
+ .
+ This package provides a library for cooperative scheduling in a browser
+ environment. It is currently used internally by node-react.

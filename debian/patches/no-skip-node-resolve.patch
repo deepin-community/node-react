@@ -4,7 +4,7 @@ Forwarded: not-needed
 
 --- a/scripts/rollup/build.js
 +++ b/scripts/rollup/build.js
-@@ -356,7 +356,6 @@
+@@ -315,7 +315,6 @@
      forbidFBJSImports(),
      // Use Node resolution mechanism.
      resolve({
@@ -12,7 +12,7 @@ Forwarded: not-needed
      }),
      // Compile to ES2015.
      babel(
-@@ -640,7 +639,7 @@
+@@ -620,7 +619,7 @@
      console.error();
      console.error(warning.message || warning);
      console.error();

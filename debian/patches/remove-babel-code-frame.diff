@@ -5,15 +5,15 @@ Last-Update: 2020-10-21
 
 --- a/scripts/rollup/build.js
 +++ b/scripts/rollup/build.js
-@@ -19,7 +19,6 @@
- const extractErrorCodes = require('../error-codes/extract-errors');
+@@ -17,7 +17,6 @@
+ const stripUnusedImports = require('./plugins/strip-unused-imports');
  const Packaging = require('./packaging');
  const {asyncRimRaf} = require('./utils');
 -const codeFrame = require('babel-code-frame');
  const Wrappers = require('./wrappers');
  
  const RELEASE_CHANNEL = process.env.RELEASE_CHANNEL;
-@@ -665,10 +664,7 @@
+@@ -645,10 +644,7 @@
      const rawLines = fs.readFileSync(file, 'utf-8');
      // column + 1 is required due to rollup counting column start position from 0
      // whereas babel-code-frame counts from 1

@@ -15,8 +15,8 @@ Last-Update: 2020-10-27
        {loose: true, useBuiltIns: true},
 --- a/package.json
 +++ b/package.json
-@@ -37,7 +37,6 @@
-     "@mattiasbuelens/web-streams-polyfill": "^0.3.2",
+@@ -39,7 +39,6 @@
+     "abort-controller": "^3.0.0",
      "art": "0.10.1",
      "babel-eslint": "^10.0.3",
 -    "babel-plugin-syntax-trailing-function-commas": "^6.5.0",
@@ -25,7 +25,7 @@ Last-Update: 2020-10-27
      "coffee-script": "^1.12.7",
 --- a/scripts/rollup/build.js
 +++ b/scripts/rollup/build.js
-@@ -99,7 +99,6 @@
+@@ -94,7 +94,6 @@
    // These plugins filter out non-ES2015.
    '@babel/plugin-transform-flow-strip-types',
    ['@babel/plugin-proposal-class-properties', {loose: true}],

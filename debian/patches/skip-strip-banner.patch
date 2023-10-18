@@ -12,9 +12,9 @@ Last-Update: 2020-10-21
  const replace = require('rollup-plugin-replace');
 -const stripBanner = require('rollup-plugin-strip-banner');
  const chalk = require('chalk');
- const path = require('path');
  const resolve = require('rollup-plugin-node-resolve');
-@@ -359,10 +358,6 @@
+ const fs = require('fs');
+@@ -318,10 +317,6 @@
      resolve({
        skip: externals,
      }),

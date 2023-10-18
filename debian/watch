@@ -6,55 +6,25 @@ filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-react-$1/ \
 
 # It is not recommended use npmregistry. Please investigate more.
 # Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=typesreact,pgpmode=none" \
- https://registry.npmjs.org/@types/react https://registry.npmjs.org/@types/react/-/react-([\d\.]+)@ARCHIVE_EXT@ checksum
-
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=react-shallow-renderer,pgpmode=none" \
+opts="searchmode=plain,ctype=nodejs,component=react-shallow-renderer,pgpmode=none,filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-react-shallow-renderer-$1/" \
  https://registry.npmjs.org/react-shallow-renderer https://registry.npmjs.org/react-shallow-renderer/-/react-shallow-renderer-([\d\.]+)@ARCHIVE_EXT@ checksum
 
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-create-subscription,pgpmode=none" \
- https://registry.npmjs.org/@types/create-subscription https://registry.npmjs.org/@types/create-subscription/-/create-subscription-([\d\.]+)@ARCHIVE_EXT@ checksum
+opts="searchmode=plain,ctype=nodejs,component=types-react,pgpmode=none,filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-react-$1/" \
+ https://registry.npmjs.org/@types/react https://registry.npmjs.org/@types/react/-/react-([\d\.]+)@ARCHIVE_EXT@ checksum
 
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-react-cache,pgpmode=none" \
- https://registry.npmjs.org/@types/react-cache https://registry.npmjs.org/@types/react-cache/-/react-cache-([\d\.]+)@ARCHIVE_EXT@ checksum
-
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-react-devtools,pgpmode=none" \
- https://registry.npmjs.org/@types/react-devtools https://registry.npmjs.org/@types/react-devtools/-/react-devtools-([\d\.]+)@ARCHIVE_EXT@ checksum
-
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-react-dom,pgpmode=none" \
+opts="searchmode=plain,ctype=nodejs,component=types-react-dom,pgpmode=none,filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-react-dom-$1/" \
  https://registry.npmjs.org/@types/react-dom https://registry.npmjs.org/@types/react-dom/-/react-dom-([\d\.]+)@ARCHIVE_EXT@ checksum
 
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-react-is,pgpmode=none" \
+opts="searchmode=plain,ctype=nodejs,component=types-react-is,pgpmode=none,filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-react-is-$1/" \
  https://registry.npmjs.org/@types/react-is https://registry.npmjs.org/@types/react-is/-/react-is-([\d\.]+)@ARCHIVE_EXT@ checksum
 
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-react-reconciler,pgpmode=none" \
- https://registry.npmjs.org/@types/react-reconciler https://registry.npmjs.org/@types/react-reconciler/-/react-reconciler-([\d\.]+)@ARCHIVE_EXT@ checksum
-
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-react-test-renderer,pgpmode=none" \
+opts="searchmode=plain,ctype=nodejs,component=types-react-test-renderer,pgpmode=none,filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-react-test-renderer-$1/" \
  https://registry.npmjs.org/@types/react-test-renderer https://registry.npmjs.org/@types/react-test-renderer/-/react-test-renderer-([\d\.]+)@ARCHIVE_EXT@ checksum
 
-# It is not recommended use npmregistry. Please investigate more.
-# Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-scheduler,pgpmode=none" \
+opts="searchmode=plain,ctype=nodejs,component=types-scheduler,pgpmode=none,filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-scheduler-$1/" \
  https://registry.npmjs.org/@types/scheduler https://registry.npmjs.org/@types/scheduler/-/scheduler-([\d\.]+)@ARCHIVE_EXT@ checksum
 
 # It is not recommended use npmregistry. Please investigate more.
 # Take a look at https://wiki.debian.org/debian/watch/
-opts="searchmode=plain,ctype=nodejs,component=types-use-subscription,pgpmode=none" \
- https://registry.npmjs.org/@types/use-subscription https://registry.npmjs.org/@types/use-subscription/-/use-subscription-([\d\.]+)@ARCHIVE_EXT@ checksum
+opts="searchmode=plain,component=types-react-reconciler,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-react-reconciler-$1/" \
+ https://registry.npmjs.org/@types/react-reconciler https://registry.npmjs.org/@types/react-reconciler/-/react-reconciler-([\d\.]+)@ARCHIVE_EXT@ checksum

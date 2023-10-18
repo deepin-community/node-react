@@ -1,16 +1,16 @@
 Description: remove useless cross-env
-Author: Xavier Guimard <yadd@debian.org>
+Author: Yadd <yadd@debian.org>
 Forwarded: not-needed
-Last-Update: 2020-05-07
+Last-Update: 2022-07-09
 
 --- a/package.json
 +++ b/package.json
-@@ -104,7 +104,7 @@
-   },
+@@ -108,7 +108,7 @@
    "scripts": {
      "build": "node ./scripts/rollup/build.js",
--    "build-for-devtools": "cross-env RELEASE_CHANNEL=experimental yarn build react/index,react-dom,react-is,react-debug-tools,scheduler,react-test-renderer,react-refresh --type=NODE",
-+    "build-for-devtools": "RELEASE_CHANNEL=experimental yarn build react/index,react-dom,react-is,react-debug-tools,scheduler,react-test-renderer,react-refresh --type=NODE",
+     "build-combined": "node ./scripts/rollup/build-all-release-channels.js",
+-    "build-for-devtools": "cross-env RELEASE_CHANNEL=experimental yarn build react/index,react/jsx,react-dom/index,react-dom/unstable_testing,react-is,react-debug-tools,scheduler,react-test-renderer,react-refresh,react-art --type=NODE && cp -r ./build/node_modules build/oss-experimental/",
++    "build-for-devtools": "RELEASE_CHANNEL=experimental yarn build react/index,react/jsx,react-dom/index,react-dom/unstable_testing,react-is,react-debug-tools,scheduler,react-test-renderer,react-refresh,react-art --type=NODE && cp -r ./build/node_modules build/oss-experimental/",
+     "build-for-devtools-dev": "yarn build-for-devtools --type=NODE_DEV",
+     "build-for-devtools-prod": "yarn build-for-devtools --type=NODE_PROD",
      "linc": "node ./scripts/tasks/linc.js",
-     "lint": "node ./scripts/tasks/eslint.js",
-     "lint-build": "node ./scripts/rollup/validate/index.js",
