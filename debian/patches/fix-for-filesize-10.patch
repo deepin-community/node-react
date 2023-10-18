@@ -1,0 +1,16 @@
+Description: fix for node-filesize >= 10
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-10-02
+
+--- a/scripts/rollup/stats.js
++++ b/scripts/rollup/stats.js
+@@ -1,7 +1,7 @@
+ 'use strict';
+ 
+ const Table = require('cli-table');
+-const filesize = require('filesize');
++const filesize = require('filesize').default;
+ const chalk = require('chalk');
+ const join = require('path').join;
+ const fs = require('fs');

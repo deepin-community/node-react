@@ -1,0 +1,26 @@
+Description: fix for rollup 3
+Author: Yadd <yadd@debian.org>
+Bug-Debian: https://bugs.debian.org/1022666
+Forwarded: not-needed
+Last-Update: 2022-10-27
+
+--- a/scripts/rollup/build.js
++++ b/scripts/rollup/build.js
+@@ -177,7 +177,7 @@
+     format,
+     globals,
+     freeze: !isProduction,
+-    interop: false,
++    interop: 'auto',
+     name: globalName,
+     sourcemap: false,
+     esModule: false,
+@@ -536,7 +536,7 @@
+     output: {
+       externalLiveBindings: false,
+       freeze: false,
+-      interop: false,
++      interop: 'auto',
+       esModule: false,
+     },
+   };

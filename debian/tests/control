@@ -1,2 +1,3 @@
 Tests: require
-Depends: node-react
+Depends: @, nodejs, pkg-js-autopkgtest, 
+Restrictions: superficial

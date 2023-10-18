@@ -12,4 +12,4 @@ Replace legacy plugins
 +const commonjs = require('@rollup/plugin-commonjs');
  const replace = require('rollup-plugin-replace');
  const chalk = require('chalk');
- const path = require('path');
+ const resolve = require('rollup-plugin-node-resolve');

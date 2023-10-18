@@ -6,6 +6,7 @@
 export DEBIAN_BUILD_MODULES=$(CURDIR)/debian/build_modules
 export NODE_PATH=packages:debian/build_modules
 export HOME=/tmp
+include /usr/share/dpkg/pkg-info.mk
 
 %:
 	dh $@
@@ -28,9 +29,26 @@ override_dh_auto_build:
 	node scripts/rollup/build.js
 	for m in `ls build/node_modules`; do \
 		cp packages/$$m/package.json build/node_modules/$$m/; \
-		cp packages/$$m/npm/* build/node_modules/$$m/; \
+		cp -r packages/$$m/npm/* build/node_modules/$$m/; \
 	done
 
-override_dh_auto_clean:
-	# Don't call pkg-js-tools hook here
-	dh_auto_clean
+override_dh_installdocs:
+	dh_installdocs
+	dh_nodejs_autodocs auto_dispatch
+
+override_dh_gencontrol:
+	set -e; for i in debian/*.install; do \
+		PACKAGE=$${i#debian/}; \
+		PACKAGE=$${PACKAGE%.install}; \
+		MODULE=$${PACKAGE#node-}; \
+		echo "P: $${PACKAGE}, M: $${MODULE}"; \
+		if test -e $${MODULE}; then \
+			dh_gencontrol -p$${PACKAGE} -- -v`pkgjs-pjson $${MODULE} version`~$(DEB_VERSION); \
+		else \
+			if test "$${MODULE}" = react; then \
+				dh_gencontrol -p$${PACKAGE}; \
+			else \
+				dh_gencontrol -p$${PACKAGE} -- -v`pkgjs-pjson packages/$${MODULE} version`~$(DEB_VERSION); \
+			fi; \
+		fi; \
+	done

@@ -14,9 +14,9 @@ Last-Update: 2020-10-21
  const commonjs = require('rollup-plugin-commonjs');
  const prettier = require('rollup-plugin-prettier');
  const replace = require('rollup-plugin-replace');
-@@ -98,19 +97,6 @@
-   errorMapFilePath: 'scripts/error-codes/codes.json',
- };
+@@ -93,19 +92,6 @@
+ const syncFBSourcePath = argv['sync-fbsource'];
+ const syncWWWPath = argv['sync-www'];
  
 -const closureOptions = {
 -  compilation_level: 'SIMPLE',
@@ -34,7 +34,7 @@ Last-Update: 2020-10-21
  // Non-ES2015 stuff applied before closure compiler.
  const babelPlugins = [
    // These plugins filter out non-ES2015.
-@@ -409,16 +395,6 @@
+@@ -369,16 +355,6 @@
      // I'm going to port "art" to ES modules to avoid this problem.
      // Please don't enable this for anything else!
      isUMDBundle && entry === 'react-art' && commonjs(),

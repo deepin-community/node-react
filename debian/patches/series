@@ -8,3 +8,5 @@ remove-babel-code-frame.diff
 remove-syntax-trailing-function-commas.diff
 fix-for-mkdirp-1.diff
 drop-legacy-plugins.patch
+fix-for-filesize-10.patch
+fix-for-rollup-3.patch
